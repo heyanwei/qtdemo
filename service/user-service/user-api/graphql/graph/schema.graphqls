@@ -1,0 +1,50 @@
+type Query {
+  GetUsers(
+      filter: UserFilter
+      page: Int
+      perPage: Int
+  ):Users
+}
+
+type Mutation {
+    Login(
+        name: String!
+        password: String!
+    ):LoginResult!
+    Register(
+        name: String!
+        password: String!
+    ):Boolean!
+}
+
+input UserFilter {
+    AND:[UserFilter]
+    OR:[UserFilter]
+    roleIn:[Int!]
+    nameLike: String
+    phoneLike: String
+}
+
+type Users {
+    totalCount: Int!
+    users: [User!]
+}
+
+type User {
+    id: Int!
+    name: String!
+    password: String!
+    phone: String!
+    email: String!
+    role: Role!
+}
+
+type Role {
+    id: Int!
+    name: String!    
+}
+
+type LoginResult {
+    result: Boolean!
+    token: String!
+}
