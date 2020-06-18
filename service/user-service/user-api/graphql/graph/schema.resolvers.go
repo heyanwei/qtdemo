@@ -5,21 +5,38 @@ package graph
 
 import (
 	"context"
-	"fmt"
+	"log"
 	"user-service/user-api/graphql/graph/generated"
 	"user-service/user-api/graphql/graph/model"
+
+	merrors "github.com/micro/go-micro/v2/errors"
 )
 
 func (r *mutationResolver) Login(ctx context.Context, name string, password string) (*model.LoginResult, error) {
-	panic(fmt.Errorf("not implemented"))
+	log.Println("Login: name- ", name, ", password- ", password)
+	if name != "root" {
+		return nil, merrors.Forbidden("go.micro.srv.user", "no such user name")
+	}
+
+	if password != "123456" {
+		return nil, merrors.Forbidden("go.micro.srv.user", "password is wrong")
+	}
+
+	var result model.LoginResult
+	result.Result = true
+	result.Token = "13560000000001"
+	return &result, nil
 }
 
 func (r *mutationResolver) Register(ctx context.Context, name string, password string) (bool, error) {
-	panic(fmt.Errorf("not implemented"))
+	log.Println("Register: name- ", name, ", password- ", password)
+	return true, nil
 }
 
 func (r *queryResolver) GetUsers(ctx context.Context, filter *model.UserFilter, page *int, perPage *int) (*model.Users, error) {
-	panic(fmt.Errorf("not implemented"))
+	log.Println("GetUsers")
+
+	return nil, nil
 }
 
 // Mutation returns generated.MutationResolver implementation.
