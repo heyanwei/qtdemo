@@ -2,6 +2,8 @@ import QtQuick 2.6
 
 Rectangle {
     id: rectangle
+    property alias btnLogin: btnLogin
+    property alias btnExit: btnExit
 
     Image {
         id: image
@@ -95,9 +97,6 @@ Rectangle {
             ColorButton {
                 id: btnExit
                 text: "退出"
-                onClicked: {
-                    Qt.quit()
-                }
             }
 
             ColorButton {

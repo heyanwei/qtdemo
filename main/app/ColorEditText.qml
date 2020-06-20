@@ -7,7 +7,6 @@ TextField {
 
     property color checkedColor: "#ffffff"
 
-    placeholderText: qsTr("请输入内容")
     font.family: "Arial"
     font.pixelSize: 15
     font.weight: Font.Thin
