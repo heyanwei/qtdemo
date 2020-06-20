@@ -3,5 +3,6 @@
         <file>login.qml</file>
         <file>LoginForm.ui.qml</file>
         <file>ColorEditText.qml</file>
+        <file>ColorButton.qml</file>
     </qresource>
 </RCC>

@@ -78,5 +78,32 @@ Rectangle {
                 echoMode: TextInput.Password
             }
         }
+
+        Flow {
+            id: flow1
+            x: 120
+            y: 241
+            width: 218
+            height: 57
+            scale: 1
+            anchors.horizontalCenterOffset: 22
+            layoutDirection: Qt.LeftToRight
+            flow: Flow.LeftToRight
+            spacing: 36
+            anchors.horizontalCenter: parent.horizontalCenter
+
+            ColorButton {
+                id: btnExit
+                text: "退出"
+                onClicked: {
+                    Qt.quit()
+                }
+            }
+
+            ColorButton {
+                id: btnLogin
+                text: "登录"
+            }
+        }
     }
 }

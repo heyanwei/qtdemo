@@ -6,7 +6,6 @@ TextField {
     id: root
 
     property color checkedColor: "#ffffff"
-    signal doubleClicked(var/*MouseEvent*/ event)
 
     placeholderText: qsTr("请输入内容")
     font.family: "Arial"

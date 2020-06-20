@@ -6,7 +6,7 @@ Window {
     width: 480
     height: 320
     title: qsTr("欢迎使用AGV停车库")
-    //flags: Qt.Window | Qt.FramelessWindowHint
+    flags: Qt.Window | Qt.FramelessWindowHint
 
     LoginForm {
         width: parent.width
