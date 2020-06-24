@@ -5,7 +5,7 @@
 #-------------------------------------------------
 
 QT       -= gui
-QT += sql
+QT+= network
 
 TARGET = user
 TEMPLATE = lib
@@ -23,12 +23,10 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-        user.cpp \
-    userdao.cpp
+        user.cpp
 
 HEADERS += \
-        user.h \
-    userdao.h
+        user.h
 unix {
     target.path = /usr/lib
     INSTALLS += target

@@ -1,6 +1,8 @@
 import QtQuick 2.6
 import QtQuick.Window 2.2
 
+import User.module 1.0
+
 Window {
     visible: true
     width: 480
@@ -15,8 +17,12 @@ Window {
              Qt.quit();
         }
         btnLogin.onClicked: {
-            Qt.quit();
+            user.Login(inputUser.text, inputPassword.text);
         }
+    }
+
+    User{
+        id:user
     }
 
 }

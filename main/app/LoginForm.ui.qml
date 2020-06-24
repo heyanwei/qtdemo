@@ -4,6 +4,8 @@ Rectangle {
     id: rectangle
     property alias btnLogin: btnLogin
     property alias btnExit: btnExit
+    property alias inputUser: inputUser
+    property alias inputPassword: inputPassword
 
     Image {
         id: image

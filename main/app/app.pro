@@ -26,3 +26,28 @@ QML_DESIGNER_IMPORT_PATH =
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+CONFIG(debug, debug|release){
+DESTDIR = ../bin/Debug
+LIBS += -L../bin/Debug
+
+unix|win32: LIBS += -LD:\TestCode\QT\Client\main_make\voice\debug -lvoice
+INCLUDEPATH += D:\TestCode\QT\Client\main\voice
+DEPENDPATH += D:\TestCode\QT\Client\main_make\voice\debug
+
+unix|win32: LIBS += -LD:\TestCode\QT\Client\main_make\user\debug -luser
+INCLUDEPATH += D:\TestCode\QT\Client\main\user
+DEPENDPATH += D:\TestCode\QT\Client\main_make\user\debug
+
+} else {
+DESTDIR = ../bin/Release
+LIBS += -L../bin/Release
+
+unix|win32: LIBS += -LD:\TestCode\QT\Client\main_make\voice\release -lvoice
+INCLUDEPATH += D:\TestCode\QT\Client\main\voice
+DEPENDPATH += D:\TestCode\QT\Client\main_make\voice\release
+
+unix|win32: LIBS += -LD:\TestCode\QT\Client\main_make\user\release -luser
+INCLUDEPATH += D:\TestCode\QT\Client\main\user
+DEPENDPATH += D:\TestCode\QT\Client\main_make\user\release
+}
